@@ -4,7 +4,7 @@
 	// the API end point
 	var url = "getListOfFavPlaces";
 
-	// TO DO: YOU NEED TO USE AJAX TO CALL getListOfFavPlaces end-point from server
+	
 	// STEPS:
 	// 1. Hit the getListOfFavPlaces end-point of server using AJAX get method
 	// 2. Upon successful completion of API call, server will return the list of places
