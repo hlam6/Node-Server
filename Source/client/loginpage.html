@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login Page</title>
+		<!--<link rel="stylesheet" type="text/css" href="client/login.css"> -->
+	</head>
+	<body>
+		<div id="loginPage">
+			<h1>Login Page</h1>
+			<h2>Please enter your user name and password. Both are case sensitive.</h2>
+		</div>
+		<div id="invalidLogin"></div>
+		<div>
+			<form action="validateLoginDetails" method="POST">
+				User: <br>
+				<input type="text" name="userBox" placeholder="Enter user name"/><br>
+				Password: <br>
+				<input type="text" name="passwordBox" placeholder="Enter password"/>
+				<input id="submitBox" type="submit" name="submitBox"/ value="Submit">
+			</form>
+		</div>
+		<script type="text/javascript" src="index.js">
+		</script>
+	</body>
+</html>

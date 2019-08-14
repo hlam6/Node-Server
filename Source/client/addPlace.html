@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="client/css/style.css">
+<!--    <link rel="stylesheet" type="text/css" href="client/css/style.css">-->
     <title>Add Place</title>
   </head>
 
@@ -16,8 +16,9 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav">
           <li><a href="/"><b>Home</b></a></li>
-            <li><a href="/favourites.html"><b>Favourite places</b></a></li>
-            <li><a href="/addPlace.html"><b>Add Place</b></a></li>
+            <li><a href="/favourites"><b>Favourite places</b></a></li>
+            <li><a href="/addPlace"><b>Add Place</b></a></li>
+            <li><a href="/logout"><b>Logout</b></a></li>
         </ul>
       </div>
     </nav>
@@ -41,7 +42,7 @@
                   <td class="col-md-6">Place Name</td>
                   <td class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="placename" required maxlength="15">
+                      <input type="text" class="form-control" name="placename" required maxlength="15" required pattern="[a-zA-Z0-9 ]+">
                     </div>
                   </td>
               </tr>
@@ -50,7 +51,7 @@
                   <td class="col-md-6">Address Line 1</td>
                   <td class="col-md-6">
                     <div class="form-group">
-                     <input type="text" class="form-control" name="addressline1" required maxlength="30">
+                     <input type="text" class="form-control" name="addressline1" required maxlength="30" required pattern="[a-zA-Z0-9 ]+">
                     </div>
                   </td>
               </tr>
@@ -59,7 +60,7 @@
                   <td class="col-md-6">Address Line 2</td>
                   <td class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="addressline2" required maxlength="30">
+                      <input type="text" class="form-control" name="addressline2" maxlength="30">
                     </div>
                   </td>
               </tr>

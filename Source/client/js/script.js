@@ -1,15 +1,36 @@
 "use strict";
 
 (function() {
-	// the API end point
 	var url = "getListOfFavPlaces";
+	var xmlhttp = new XMLHttpRequest();
 
-	
-	// STEPS:
-	// 1. Hit the getListOfFavPlaces end-point of server using AJAX get method
-	// 2. Upon successful completion of API call, server will return the list of places
-	// 2. Use the response returned to dynamically add rows to 'myFavTable' present in favourites.html page
-	// 3. You can make use of jQuery or JavaScript to achieve this
-	// Note: No changes will be needed in favourites.html page
-	
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {	
+	    		console.log(xmlhttp.responseText);
+				fillTable(JSON.parse(xmlhttp.responseText));	
+	    }
+	};
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+
+
+	function fillTable(result) {
+			var output = "";
+    		for (var i = 0; i < result.length; i++) {
+					output+="<tr><td>"
+		 			+ result[i]["place_name"]
+		 			+ "</td><td>"
+		 			+ result[i]["addr_line1"]
+		 			+ result[i]["addr_line2"]
+		 			+ "</td><td>"
+		 			+ result[i]["open_time"]+ "<br>"
+					+ result[i]["close_time"]
+					+ "</td><td>"
+					+ result[i]["add_info"]
+					+ "</td><td>"
+					+ result[i]["add_info_url"]
+					+ "</td></tr>";				
+			}
+		 document.getElementsByTagName("tbody")[0].innerHTML = output;
+    }
 })();
